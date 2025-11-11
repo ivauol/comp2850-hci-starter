@@ -62,7 +62,8 @@ fun Route.taskRoutes() {
                 return@post call.respondText(error, ContentType.Text.Html, HttpStatusCode.BadRequest)
             } else {
                 // No-JS: redirect back (could add error query param)
-                return@post call.respondRedirect("/tasks")
+                response.headers.append("Location", "/tasks")
+                return@post respond(HttpStatusCode.SeeOther)
             }
         }
 
@@ -85,8 +86,9 @@ fun Route.taskRoutes() {
             return@post call.respondText(fragment + status, ContentType.Text.Html, HttpStatusCode.Created)
         }
 
-        // No-JS: POST-Redirect-GET pattern
-        call.respondRedirect("/tasks")
+        // No-JS: POST-Redirect-GET pattern (303 See Other)
+        response.headers.append("Location", "/tasks")
+        respond(HttpStatusCode.SeeOther)
     }
 
     /**
@@ -104,8 +106,9 @@ fun Route.taskRoutes() {
             return@post call.respondText(status, ContentType.Text.Html)
         }
 
-        // No-JS: POST-Redirect-GET pattern
-        call.respondRedirect("/tasks")
+        // No-JS: POST-Redirect-GET pattern (303 See Other)
+        response.headers.append("Location", "/tasks")
+        respond(HttpStatusCode.SeeOther)
     }
 
     // TODO: Week 7 Lab 1 Activity 2 Steps 2-5

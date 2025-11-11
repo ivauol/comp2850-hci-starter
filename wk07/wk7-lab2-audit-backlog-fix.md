@@ -19,7 +19,6 @@ Throughout COMP2850 we use **people-centred language** (e.g., "person using a sc
 - [W3C (2024). WCAG 2.2 Quick Reference](https://www.w3.org/WAI/WCAG22/quickref/)
 - [axe DevTools Documentation](https://www.deque.com/axe/devtools/)
 - [GOV.UK: Making Your Service Accessible](https://www.gov.uk/service-manual/helping-people-to-use-your-service/making-your-service-accessible-an-introduction)
-- `../../references/assistive-testing-checklist.md` (module testing guide)
 
 **Recommended**
 - [WebAIM: WCAG 2 Checklist](https://webaim.org/standards/wcag/checklist)
